@@ -1,0 +1,21 @@
+<div class="cantainer">
+  <form action="buscaReclamo" method="post">
+    <select name="tipoReclamoFiltro" id="tipoReclamoFiltro">
+      <option><%= tipoReclamoFiltro %></option>
+      <%
+      for(var i=0; i< reclamos.length; i++) {
+        var c = 0;
+        for(var j=0; j< i; j++){
+          if(reclamos[j].tipoReclamo == reclamos[i].tipoReclamo){
+            c++;
+          }
+        }
+        if(c == 0){
+          %>
+          <option><%= reclamos[i].tipoReclamo %></option>
+      <% }}
+      %>
+    </select>
+    <input class="button_1" type="submit" name="envio" value="Buscar Reclamo">
+  </form>
+</div>
